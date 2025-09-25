@@ -18,13 +18,13 @@ export default function Home() {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ deskripsi: description, platform }), 
+        body: JSON.stringify({ description: description, platform }), 
       });
 
       const data = await response.json();
 
       if (response.ok) {
-        setResult(data.hasil);
+        setResult(data.result);
       } else {
         setResult(`Error: ${data.error || 'An error occurred while generating content.'}`);
       }
